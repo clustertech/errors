@@ -44,13 +44,13 @@ Usage
   ```
   The output is like:
 
-  >    ERROR:
-  >    Oh, error !
-  >
-  >    ORIGINAL STACK TRACE:
-  >    goroutine 1 [running]:
-  >    main.main()
-  >      /home/jackey/temp/test/src/main.go:14 +0x32
+  >    ERROR:  
+  >    Oh, error !  
+  >  
+  >    ORIGINAL STACK TRACE:  
+  >    goroutine 1 [running]:  
+  >    main.main()  
+  >      /home/jackey/temp/test/src/main.go:14 +0x32  
 
   
 2. Wrap an existing error with stack trace:
@@ -74,15 +74,14 @@ Usage
 
   The output is like:
 
-  >    ERROR:
-  >    Fail to read file
-  >
-  >    stat file/not/exsit: no such file or directory
-  >
-  >    ORIGINAL STACK TRACE:
-  >    goroutine 1 [running]:
-  >    main.main()
-  >     /home/jackey/temp/test/src/main.go:15 +0x61
+  >    ERROR:  
+  >    Fail to read file  
+  >  
+  >    stat file/not/exsit: no such file or directory  
+  >    ORIGINAL STACK TRACE:  
+  >    goroutine 1 [running]:  
+  >    main.main()  
+  >     /home/jackey/temp/test/src/main.go:15 +0x61  
 
 3. Implement StackError interface to customize the error message.
 
