@@ -76,6 +76,7 @@ Usage
 
   >    ERROR:
   >    Fail to read file
+  >
   >    stat file/not/exsit: no such file or directory
   >
   >    ORIGINAL STACK TRACE:
