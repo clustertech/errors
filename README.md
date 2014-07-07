@@ -18,9 +18,9 @@ Dropbox.
 Changes
 ==============
 
-Remove all dependency on orginal project.
+* Remove all dependency on orginal project.
 
-Remove the Dropbox key word and use more general names for interface and
+* Remove the Dropbox key word and use more general names for interface and
 structure.
 
 Usage
@@ -28,6 +28,7 @@ Usage
 
 1. Generate an error with stack trace:
 
+  ```
   package main
 
   import (
@@ -40,20 +41,21 @@ Usage
     e := errors.New("Oh, error !")
     fmt.Println(e)
   }
-
+  ```
   The output is like:
 
-    ERROR:
-    Oh, error !
+  >    ERROR:
+  >    Oh, error !
+  >
+  >    ORIGINAL STACK TRACE:
+  >    goroutine 1 [running]:
+  >    main.main()
+  >      /home/jackey/temp/test/src/main.go:14 +0x32
 
-    ORIGINAL STACK TRACE:
-    goroutine 1 [running]:
-    main.main()
-      /home/jackey/temp/test/src/main.go:14 +0x32
-
-
+  
 2. Wrap an existing error with stack trace:
 
+  ```
   package main
 
   import (
@@ -68,27 +70,27 @@ Usage
     e := errors.Wrap(err, "Fail to read file")
     fmt.Println(e)
   }
-
+  ```
 
   The output is like:
 
-    ERROR:
-      Fail to read file
-      stat file/not/exsit: no such file or directory
-
-      ORIGINAL STACK TRACE:
-      goroutine 1 [running]:
-      main.main()
-        /home/jackey/temp/test/src/main.go:15 +0x61
+  >    ERROR:
+  >    Fail to read file
+  >    stat file/not/exsit: no such file or directory
+  >
+  >    ORIGINAL STACK TRACE:
+  >    goroutine 1 [running]:
+  >    main.main()
+  >     /home/jackey/temp/test/src/main.go:15 +0x61
 
 3. Implement StackError interface to customize the error message.
 
-The helper function StackTrace can be used:
+  The helper function StackTrace can be used:
 
-  stack, content := errors.StackTrace()
+  ```stack, content := errors.StackTrace()```
 
-To get more information about it, the unit test can be checked. There is
-an example in the test code.
+  To get more information about it, the unit test can be checked. There is
+  an example in the test code.
 
 License
 =======
