@@ -18,9 +18,9 @@ Dropbox.
 Changes
 ==============
 
-Remove all dependency on orginal project
+Remove all dependency on orginal project.
 Remove the Dropbox key word and use more general names for interface and
-structure
+structure.
 
 Usage
 =========
